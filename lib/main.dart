@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'stream_route.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_stream_demo/app/simple_bloc_ovserver.dart';
+import 'modules/cubit/cubit_route.dart';
 
 void main() {
+  Bloc.observer = SimpleBlocObserver();
+
   runApp(MyApp());
 }
 
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: StreamRoute(title: 'Flutter Demo Home Page'),
+      home: CubitRoute(),
     );
   }
 }
